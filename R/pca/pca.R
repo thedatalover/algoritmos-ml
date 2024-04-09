@@ -14,7 +14,7 @@ data_pca <- data[,3:ncol(data)]
 pca_result <- prcomp(data_pca, scale. = TRUE)
 
 # Ver la varianza explicada por cada componente principal
-print(summary(pca_resultado))
+print(summary(pca_result))
 
 # PCA para 2 componentes principales
 # Preparar los datos para graficar
