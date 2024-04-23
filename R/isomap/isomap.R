@@ -13,8 +13,8 @@ data_iso <- data[,3:ncol(data)]
 dist_matrix <- dist(data_iso, method = "euclidean")
 
 # Realizar Isomap para 2 y 3 componentes
-iso_2d <- isomap(dist_matrix, k = 5, ndim = 2)  # Usamos 5 vecinos más cercanos
-iso_3d <- isomap(dist_matrix, k = 5, ndim = 3)
+iso_2d <- isomap(dist_matrix, k = 10, ndim = 2)  # Podemos usar distintos valores de k vecinos más cercanos
+iso_3d <- isomap(dist_matrix, k = 10, ndim = 3)
 
 # Calcular estrés basado en la discrepancia de las distancias
 # Estrés se calcula como: sqrt(sum((distancias originales - distancias en baja dimensión)^2) / sum(distancias originales^2))
