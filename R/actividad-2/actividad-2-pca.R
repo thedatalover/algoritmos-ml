@@ -19,11 +19,11 @@ response <- data$Diagnosis
 
 # Realizar PCA y reducir a 3 dimensiones
 pca <- prcomp(features, center = TRUE, scale. = TRUE)
-pca_data <- as.data.frame(pca$x[, 1:3])
+pca_data <- as.data.frame(pca$x[, 1:5])
 pca_data$Diagnosis <- response
 
 # Mostrar la varianza explicada por los componentes principales
-explained_variance <- summary(pca)$importance[2, 1:3]
+explained_variance <- summary(pca)$importance[2, 1:5]
 print(paste("Varianza explicada por los 3 primeros componentes:", round(explained_variance * 100, 2), "%"))
 
 # Dividir el dataset en conjuntos de entrenamiento y prueba
