@@ -10,7 +10,7 @@ library(randomForest)  # Para Random Forest
 # Leer los datos
 data <- read.csv("datos/gene_data_dimensions.csv")
 
-# Convertir la columna "class" a factor y codificar "B" como 0 y "M" como 1
+# Convertir la columna "class" a factor
 data$class <- as.factor(data$class)
 
 # Dividir el dataset en conjuntos de entrenamiento y prueba

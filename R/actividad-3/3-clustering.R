@@ -31,9 +31,9 @@ for (i in 2:15) wss[i] <- sum(kmeans(data, centers=i)$tot.withinss)
 # Graficar el método del codo
 plot(1:15, wss, type="b", xlab="Número de clusters", ylab="Suma de cuadrados total intra-cluster", main="Método del codo para determinar el número óptimo de clusters")
 
-# Aplicar K-means con el número óptimo de clusters (por ejemplo, 6)
+# Aplicar K-means con el número óptimo de clusters (por ejemplo, 5)
 set.seed(123)
-kmeans_result <- kmeans(data, centers=6)
+kmeans_result <- kmeans(data, centers=5)
 
 # Añadir los resultados de clustering al dataframe original
 data$KMeans_Cluster <- kmeans_result$cluster
@@ -54,7 +54,7 @@ dist_matrix <- dist(data)
 hc <- hclust(dist_matrix)
 
 # Cortar el dendrograma en k clusters
-data$Cluster_HC <- as.factor(cutree(hc, 6))
+data$Cluster_HC <- as.factor(cutree(hc, 5))
 
 # Graficar los clusters de DBSCAN (usando las dos primeras dimensiones)
 ggplot(data, aes(x = data[,1], y = data[,2], color = Cluster_HC)) +

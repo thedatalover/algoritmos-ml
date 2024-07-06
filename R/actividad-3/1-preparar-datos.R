@@ -49,7 +49,7 @@ write.csv(gene_data, "datos/gene_data.csv", row.names = FALSE)
 ################################
 
 # Crear una dataframe para limpieza excluyendo las últimas dos columnas
-data_to_clean = gene_data
+data_to_clean <- gene_data
 
 ########################
 # Funciones Auxiliares #

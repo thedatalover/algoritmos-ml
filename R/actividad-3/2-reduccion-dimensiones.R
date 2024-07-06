@@ -13,7 +13,7 @@ library(umap)
 data <- read_csv("datos/gene_data_normalized.csv")
 
 # Creamos un conjunto de datos solo con variables (predictores)
-dimensions_data <- select(data, class)
+dimensions_data <- select(data, -class)
 
 # Definir el número de dimensiones
 num_dim <- 2
@@ -39,7 +39,13 @@ pca_data$class <- data$class
 ######################################
 
 set.seed(123)  # Para reproducibilidad
-tsne_result <- Rtsne(dimensions_data, dims = num_dim, perplexity = 30, verbose = TRUE, max_iter = 1000)
+tsne_result <- Rtsne(
+  dimensions_data,
+  dims = num_dim,
+  perplexity = 30,
+  verbose = TRUE,
+  max_iter = 1000
+  )
 
 # Crear un dataframe con los dos componentes de t-SNE
 tsne_data <- as.data.frame(tsne_result$Y)
